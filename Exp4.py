@@ -65,6 +65,7 @@ print(" ")
 
 total = []
 for i in final:
-    total.append([i[0],sum(list(filter(lambda x : (x), i[1])))])
+    s = sum(list(filter(lambda x: (x), i[1])))
+    total.append([i[0], s])
           
 print(total, "<-- total overall")
