@@ -13,7 +13,7 @@ sets = set(list1)
 list1 = list(sets)
 print(list1)
 
-#Second Question, Remove list repeated elements
+#Second Question, Count the frequency of characters of a string and display it as a dictionary
 string = input("Enter the string:- ")
 dict   = {}
 
