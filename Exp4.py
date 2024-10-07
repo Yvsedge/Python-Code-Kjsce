@@ -1,6 +1,6 @@
 '''Write a Python program using a recursive function that takes a string as input from the user and 
     displays whether the string is Palindrome.'''
-
+'''
 def palindrome(string):
     if len(string) < 1:
         return True
@@ -11,11 +11,11 @@ string = input("Enter a string:- ")
 p = palindrome(string)
 if p:
     print("palindrome")
-
+'''
 '''
 Write a Python program for a character frequency counter function that takes a list of strings from the user as input 
    and displays the frequency of each character in the list.'''
-
+'''
 def counter(main_list):
     string = main_list
     dict = {}
@@ -39,7 +39,7 @@ p = counter(main_list)
 non = list(p)
 val = list(p.values())
 print(list((non,val)))
-
+'''
 '''Alternative to 2nd'''
 
 def take_input():
@@ -60,4 +60,11 @@ for i in main_list:
         p = list(map(lambda x : x.count(j) , main_list))
         empty.append((j,p))
 [final.append(x) for x in empty if x not in final]
-print(final)
+print(final, "<-- All Characters seperated for different strings")
+print(" ")
+
+total = []
+for i in final:
+    total.append([i[0],sum(list(filter(lambda x : (x), i[1])))])
+          
+print(total, "<-- total overall")
