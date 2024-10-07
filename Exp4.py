@@ -69,3 +69,4 @@ for i in final:
     total.append([i[0], s])
           
 print(total, "<-- total overall")
+print(' ')
