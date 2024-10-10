@@ -49,6 +49,22 @@ result = sum(map(lambda x: x, arr))
 print(result)
 '''
 6) Program to find largest element in an array
+'''
+import functools as ft
+flag = 0
+arr = []
+while flag == 0:
+    val = int(input("Enter value for array:- "))
+    arr.append(val)
+    ask = int(input("Do you want to continue:-(0 or 1) "))
+    if ask == 0:
+        break
+biggest = ft.reduce(lambda x , y :x if x>y else y, arr)
+print(biggest)
+'''
 7) Program to Reverse a Number
 
 '''
+number1 = int(input("Enter a number:- "))
+num1 = str(number1)
+print(int(num1[::-1]))

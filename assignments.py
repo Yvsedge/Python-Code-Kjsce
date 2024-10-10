@@ -43,14 +43,13 @@ W.A.P to print all prime numbers between two numbers (entered by the
 user) by making a user-defined function.
 '''
 def prime(a , b):
-    range1 = [a, b]
-    for i in range1:
+    for i in range(a, b):
          if i == 1 or i == 0:
               pass
-         elif i >= 2:
+         elif i > 1:
             for num in range(2, i):
-                if i % num:
-                    pass
+                if i % num == 0:
+                    break
             else:
                 yield i
 
@@ -58,4 +57,52 @@ def prime(a , b):
 a = int(input("Enter first number:- "))
 b = int(input("Enter second number:- "))
 result = prime(a,b)
+for j in result:
+    print(j)
+
+'''
+Write a program to find sum of first n natural numbers using
+recursion. Note: Positive integers are known as natural number i.e.
+1, 2, 3....n
+'''
+
+def summation(n):
+    if n == 1:
+        return 1
+    elif n > 1 :
+        return n + summation(n-1)
+
+result = summation(9)    
 print(result)
+
+'''
+W.A.P to find Sum of Digits of a Number Both with and without using
+Recursion
+'''
+#Without Recursion
+
+def sum_of_digits(n):
+    digit = str(n)
+    sum = 0
+    for i in digit:
+        sum += int(i)
+    return sum
+
+i = int(input("enter the digit:- "))
+result = sum_of_digits(i)
+print(result)
+
+#With Recursion
+
+def sum_of_digits(n):
+
+    if n < 10:
+        return n
+    else:
+        return n % 10 + sum_of_digits(n // 10)
+
+number = int(input("Enter a number: "))
+result = sum_of_digits(number)
+print(result)
+
+
