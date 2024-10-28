@@ -41,6 +41,7 @@ height = get_float("height")
 print(f"Your name is {name}")
 print(f"Your age is {age}")
 print(f"Your weight is {weight}")
+print(f"Your weight is {height}")
 
 '''
 2.	Write a program to create a file employeedetails.txt" which stores the Employee details by 
@@ -54,17 +55,18 @@ Obtain the details for EmpId from the user.
 '''
 
 with open("employeedetails.txt", "w") as file:
-    file.write("EmdId   Name    Department \n")
+    file.write("EmdId\tName\tDepartment \n")
     flag = 0
     values = []
     while flag == 0:
         id = int(input("Enter your id:- "))
         name = str(input("Enter your name:- "))
         department = str(input("Enter your department:- "))
-        file.write(f"{id}   {name}   {department} \n")
+        file.write(f"{id}\t{name}\t{department} \n")
         ask = int(input("Do you want to continue(0 or 1):- "))
         if ask == 0:
             break
+
 with open("employeedetails.txt", "r") as file:
     print(file.read())
 
@@ -72,6 +74,7 @@ with open("employeedetails.txt", "r") as file:
 Write a program that takes a list of numbers as input from the user and calculates their average. 
 If the list is empty, raise a custom exception EmptyListError with an appropriate error message.
 '''
+
 class EmptyListError(Exception):
     def __init__(self, args , Mess = "EmptyListError"):
         self.args = args
@@ -91,3 +94,19 @@ list1 = list_Maker()
 if len(list1) == 0:
     raise EmptyListError("EmptyListError")
 
+'''
+Write a program that prompts the user for a file name and then reads 
+and prints the contents of the requested file in the upper case.
+'''
+#name of file = 1023.txt
+
+name = ""
+try:
+    i = input("Enter name of the file:- ")
+    if i != "1023":
+        raise EOFError
+    else:
+        with open("1023.txt", "r") as file:
+            print(file.read())
+except EOFError:
+    print("You have entered incorrect name")
